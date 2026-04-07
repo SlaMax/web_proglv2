@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dinamička Galerija</title>
+    <link rel="stylesheet" href="/style.css"> </head>
+<body>
+    <h1>Moja Dinamička Galerija</h1>
+    <div class="galerija">
+        <% podaci.forEach(slika => { %>
+            <div class="kartica">
+                <a href="#<%= slika.id %>">
+                    <img src="<%= slika.url %>" alt="<%= slika.opis %>" style="width:200px;">
+                </a>
+                
+                <div id="<%= slika.id %>" class="lightbox">
+                    <a href="#" class="zatvori">&times;</a>
+                    <img src="<%= slika.url %>" alt="<%= slika.opis %>">
+                    <p><%= slika.opis %></p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>
