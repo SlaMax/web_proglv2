@@ -1,25 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="hr">
 <head>
-    <title>Dinamička Galerija</title>
-    <link rel="stylesheet" href="/style_slika.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galerija filmskih plakata - Web programiranje LV1">
+    <meta name="author" content="Robert Slamnjaković">
+    <link rel="stylesheet" href="style_slika.css">
+    <title>Galerija Filmova</title>
 </head>
 <body>
-    <h1>Moja Dinamička Galerija</h1>
-    <div class="galerija">
+
+    <header>
+        <h1>Galerija Filmskih Plakata</h1>
+        <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="nav-links">
+                <li><a href="/">Početna</a></li>
+                <li><a href="/graf.html">Grafikoni</a></li>
+                <li><a href="/slike" class="active">Galerija</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="galerija">
+            <% podaci.forEach(slika => { %>
+                <figure class="galerija_slika">
+                    <a href="#<%= slika.id %>">
+                        <img src="<%= slika.url %>" alt="<%= slika.opis %>" loading="lazy">
+                    </a>
+                    <figcaption><%= slika.opis %></figcaption>
+                </figure>
+            <% }); %>
+        </section>
+
         <% podaci.forEach(slika => { %>
-            <div class="kartica">
-                <a href="#<%= slika.id %>">
-                    <img src="<%= slika.url %>" alt="<%= slika.opis %>" style="width:200px;">
-                </a>
-                
-                <div id="<%= slika.id %>" class="lightbox">
-                    <a href="#" class="zatvori">&times;</a>
-                    <img src="<%= slika.url %>" alt="<%= slika.opis %>">
-                    <p><%= slika.opis %></p>
+            <div id="<%= slika.id %>" class="lightbox">
+                <a href="#" class="close" aria-label="Zatvori">&times;</a>
+                <div class="lightbox-content">
+                    <img src="<%= slika.url %>" alt="Prikaz slike <%= slika.id %>">
+                    <p style="color: white; text-align: center; margin-top: 10px;"><%= slika.opis %></p>
                 </div>
             </div>
         <% }); %>
-    </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026. Robert Slamnjaković | LV1 Galerija</p>
+    </footer>
+
 </body>
 </html>
