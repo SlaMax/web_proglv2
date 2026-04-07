@@ -9,7 +9,8 @@ app.use(express.static('public'));
 
 // Ruta za /slike koja čita iz JSON datoteke
 app.get('/slike', (req, res) => {
-    fs.readFile('images.json', 'utf8', (err, data) => {
+    // Promijeni ovu liniju:
+        fs.readFile(path.join(__dirname, 'images.json'), 'utf8', (err, data) => {
         if (err) {
             console.error("Greška pri čitanju datoteke:", err);
             return res.status(500).send("Greška na serveru");
