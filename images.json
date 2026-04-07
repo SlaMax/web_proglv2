@@ -1,7 +1,7 @@
 [
-  { "id": "p1", "url": "images/photo1.png", "opis": "Prva fotografija" },
-  { "id": "p2", "url": "images/photo2.png", "opis": "Druga fotografija" },
-  { "id": "p3", "url": "images/photo3.png", "opis": "Treća fotografija" },
-  { "id": "p4", "url": "images/photo4.png", "opis": "Četvrta fotografija" },
-  { "id": "p5", "url": "images/photo5.png", "opis": "Peta fotografija" }
+  { "id": "p1", "url": "image/photo1.png", "opis": "Prva fotografija" },
+  { "id": "p2", "url": "image/photo2.png", "opis": "Druga fotografija" },
+  { "id": "p3", "url": "image/photo3.png", "opis": "Treća fotografija" },
+  { "id": "p4", "url": "image/photo4.png", "opis": "Četvrta fotografija" },
+  { "id": "p5", "url": "image/photo5.png", "opis": "Peta fotografija" }
 ]
