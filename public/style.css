@@ -1,4 +1,3 @@
-
 :root {
     --primary-color: #e50914;    
     --secondary-color: #221f1f;  
@@ -8,7 +7,6 @@
     --transition: 0.3s ease-in-out;
 }
 
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -16,6 +14,9 @@ body {
     background-color: var(--bg-body);
     color: var(--text-dark);
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -25,40 +26,42 @@ header {
     text-align: center;
 }
 
-
 nav {
     background-color: #333;
-    padding: 0.5rem 1rem;
     position: sticky;
     top: 0;
     z-index: 1000;
+    text-align: center;
+}
+
+.menu-checkbox, .hamburger {
+    display: none;
 }
 
 .nav-links {
-    display: none; 
     list-style: none;
     padding: 0;
     margin: 0;
-    flex-direction: column;
-}
-
-
-nav:hover .nav-links {
     display: flex;
+    justify-content: center;
 }
 
 .nav-links li a {
     color: white;
     text-decoration: none;
-    padding: 10px;
+    padding: 15px 20px;
     display: block;
     transition: background var(--transition);
+    font-weight: bold;
 }
 
-.nav-links li a:hover {
+.nav-links li a:hover, .nav-links li a.active {
     background-color: var(--primary-color);
 }
 
+main {
+    flex: 1;
+}
 
 .grid-container {
     display: grid;
@@ -69,28 +72,15 @@ nav:hover .nav-links {
     margin: 0 auto;
 }
 
-/* Desktop verzija (Media Query) */
 @media (min-width: 1024px) {
     .grid-container {
         grid-template-columns: 3fr 1fr; 
     }
-
-    .nav-links {
-        display: flex; 
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .menu-toggle {
-        display: none; 
-    }
-
-    
 }
-
 
 .table-scroll {
     overflow-x: auto;
+    margin-top: 20px;
 }
 
 table {
@@ -115,13 +105,13 @@ tr:hover {
     background-color: #f2f2f2; 
 }
 
-
 .sidebar {
     background: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
+    height: fit-content;
 }
 
 .featured-img {
@@ -131,11 +121,9 @@ tr:hover {
     transition: transform var(--transition);
 }
 
-
 .featured-img:hover {
     transform: scale(1.03);
 }
-
 
 footer {
     text-align: center;
@@ -143,4 +131,39 @@ footer {
     background: var(--secondary-color);
     color: white;
     margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        margin: 10px auto;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        margin: 2px 0;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+    }
+
+    .menu-checkbox:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-links li a {
+        border-bottom: 1px solid #444;
+    }
 }
