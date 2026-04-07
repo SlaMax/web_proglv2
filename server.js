@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const fs = require('fs'); // Dodajemo 'fs' modul za čitanje datoteka
+const fs = require('fs'); 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -9,7 +9,7 @@ app.use(express.static('public'));
 
 // Ruta za /slike koja čita iz JSON datoteke
 app.get('/slike', (req, res) => {
-    fs.readFile('slike.json', 'utf8', (err, data) => {
+    fs.readFile('images.json', 'utf8', (err, data) => {
         if (err) {
             console.error("Greška pri čitanju datoteke:", err);
             return res.status(500).send("Greška na serveru");
