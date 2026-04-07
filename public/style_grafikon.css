@@ -1,0 +1,178 @@
+/* 1. DEFINIRANJE VARIJABLI (Upute 2.2) */
+:root {
+    --bg-dark: #1a1a1a;
+    --text-white: #ffffff;
+    --transition-speed: 1.5s;
+    --bg-body: #f4f4f4;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-body);
+}
+
+header, footer {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    text-align: center;
+    padding: 20px;
+}
+
+/* 3. NAVIGACIJA */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a.active {
+    color: #e50914; /* Crvena boja za aktivnu stranicu */
+}
+
+/* 4. GLAVNI SADRŽAJ - GRAFIKON */
+main {
+    flex: 1; /* Gura footer na dno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.histogram-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.histogram {
+    display: flex;
+    align-items: flex-end; /* Poravnanje stupaca na dno (Upute 2.2) */
+    justify-content: space-around;
+    height: 300px;
+    border-bottom: 2px solid #333;
+    margin: 40px 0;
+}
+
+/* 5. STUPCI (BARS) */
+.bar {
+    width: 50px;
+    background-color: var(--color); /* Koristi varijablu iz HTML-a */
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    
+    /* Animacija rasta (Upute 2.2) */
+    height: 0;
+    animation: grow var(--transition-speed) ease-out forwards;
+    
+    transition: filter 0.3s;
+}
+
+.bar:hover {
+    filter: brightness(80%); /* Interaktivnost na hover */
+}
+
+/* Prikaz vrijednosti na hover (Upute 2.2) */
+.bar:hover::after {
+    content: attr(data-value);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+}
+
+/* Labela žanra ispod stupca */
+.bar::before {
+    content: var(--label);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+}
+
+/* ANIMACIJA RASTA */
+@keyframes grow {
+    to { height: var(--height); }
+}
+
+.menu-checkbox, .hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    /* 1. Prikaži hamburger ikonu */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 30px;
+        margin: 0 auto 10px auto; 
+    }
+
+    .hamburger span {
+        display: block;
+        height: 4px;
+        width: 100%;
+        background-color: white;
+        border-radius: 2px;
+    }
+
+    
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        background-color: #222;
+        padding: 10px 0;
+        border-radius: 8px;
+    }
+
+    
+    .menu-checkbox:checked ~ .nav-links {
+        display: flex;
+    }
+
+   
+    nav ul li {
+        margin: 10px 0;
+    }
+
+
+    .histogram {
+        width: 200px; 
+        height: 200px;
+        border-radius: 50%;
+        background: conic-gradient(
+            #f39c12 0% 35%, 
+            #e74c3c 35% 65%, 
+            #3498db 65% 85%, 
+            #2ecc71 85% 95%, 
+            #9b59b6 95% 100%
+        );
+        display: block;
+        margin: 30px auto;
+    }
+
+    .bar { display: none; }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vizualizacija filmskih podataka - Histogram">
+    <meta name="author" content="Robert Slamnjaković">
+   <link rel="stylesheet" href="style_grafikon.css">
+    <title>Baza Filmova - Grafikoni</title>
+</head>
+<body>
+
+    <header>
+        <h1>Statistika Filmova</h1>
+        <nav>
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="graf.html" class="active">Grafikoni</a></li>
+        <li><a href="slika.html">Galerija</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <main class="chart-container">
+        <section class="histogram-section">
+            <h2>Broj filmova po žanrovima</h2>
+            
+            <div class="histogram">
+                <div class="bar" style="--height: 80%; --label: 'Komedija'; --color: #f39c12;" data-value="5"></div>
+                <div class="bar" style="--height: 60%; --label: 'Drama'; --color: #e74c3c;" data-value="4"></div>
+                <div class="bar" style="--height: 30%; --label: 'Akcija'; --color: #3498db;" data-value="2"></div>
+                <div class="bar" style="--height: 20%; --label: 'Animacija'; --color: #2ecc71;" data-value="1"></div>
+                <div class="bar" style="--height: 15%; --label: 'Ostalo'; --color: #9b59b6;" data-value="1"></div>
+            </div>
+            
+            <p class="chart-note">Prijedite mišem preko stupca za točan broj filmova.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025. Robert Slamnjaković | LV1 Vizualizacija</p>
+    </footer>
+
+</body>
+</html>

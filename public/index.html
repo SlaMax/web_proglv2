@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Pregled baze filmova s detaljnim statistikama">
+    <meta name="keywords" content="Filmovi, HTML, CSS, Baza filmova, Statistika">
+    <meta name="author" content="Robert Slamnjaković">
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Baza Filmova - Početna</title>
+</head>
+<body>
+
+    <header>
+        <h1>Svijet Filma</h1>
+        <p>Dobrodošli na moju web stranicu za analizu filmskih podataka.</p>
+    </header>
+
+    <nav>
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="graf.html">Grafikoni</a></li>
+        <li><a href="slika.html">Galerija</a></li>
+    </ul>
+</nav>
+
+    <main class="grid-container">
+        
+        <section class="table-section" aria-labelledby="movie-table-title">
+            <h2 id="movie-table-title">Popis Filmova</h2>
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Naslov</th>
+                            <th>Godina</th>
+                            <th>Žanr</th>
+                            <th>Trajanje (min)</th>
+                            <th>Država</th>
+                            <th>Ocjena</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2</td><td>Bugs Bunny's Third Movie</td><td>1982</td><td>Animacija</td><td>76</td><td>SAD</td><td>7.7</td></tr>
+                        <tr><td>3</td><td>18 anni tra una settimana</td><td>1991</td><td>Drama</td><td>98</td><td>Italija</td><td>6.5</td></tr>
+                        <tr><td>17</td><td>Ride a Wild Pony</td><td>1976</td><td>Romantični</td><td>91</td><td>SAD</td><td>5.7</td></tr>
+                        <tr><td>18</td><td>Diner</td><td>1982</td><td>Komedija</td><td>95</td><td>SAD</td><td>7.0</td></tr>
+                        <tr><td>49</td><td>Fail-Safe</td><td>1964</td><td>Drama</td><td>110</td><td>SAD</td><td>8.2</td></tr>
+                        <tr><td>51</td><td>Some Like It Hot</td><td>1959</td><td>Komedija</td><td>120</td><td>SAD</td><td>9.1</td></tr>
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+        <aside class="sidebar" aria-labelledby="featured-movie">
+            <h3 id="featured-movie">Izdvojeni Film</h3>
+            <picture>
+                <source media="(min-width: 800px)" srcset="image/poster.png">
+                <img src="image/poster.png" alt="Poster klasičnog filma" class="featured-img" loading="lazy">
+            </picture>
+            <p><strong>Zanimljivost:</strong> Film <em>The Avangers</em> smatra se jednom od najboljih superherojskih filmova svih vremena.</p>
+        </aside>
+
+        <article class="news-article">
+            <h2>Najnovije vijesti iz svijeta filma</h2>
+            <p>Uskoro izlazi novi spiderman brand new day.</p>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025. Robert Slamnjaković | Web Programiranje LV1</p>
+    </footer>
+
+</body>
+</html>

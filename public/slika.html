@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galerija filmskih plakata - Web programiranje LV1">
+    <meta name="author" content="Robert Slamnjaković">
+    <link rel="stylesheet" href="style_slika.css">
+    <title>Galerija Filmova</title>
+</head>
+<body>
+
+    <header>
+        <h1>Galerija Filmskih Plakata</h1>
+        <nav>
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="graf.html">Grafikoni</a></li>
+        <li><a href="slika.html" class ="active">Galerija</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <main>
+        <section class="galerija">
+            <figure class="galerija_slika">
+                <a href="#img1">
+                    <img src="image/poster.png" alt="Poster filma 1" loading="lazy">
+                </a>
+                <figcaption>Avangers</figcaption>
+            </figure>
+
+            <figure class="galerija_slika">
+                <a href="#img2">
+                    <img src="image/BugsBunnyMovie.png" alt="Poster filma 2" loading="lazy">
+                </a>
+                <figcaption>Bugs Bunny Movie</figcaption>
+            </figure>
+
+            <figure class="galerija_slika">
+                <a href="#img3">
+                    <img src="image/18Anni.png" alt="Poster filma 2" loading="lazy">
+                </a>
+                <figcaption>18 anni tra una settimana</figcaption>
+            </figure>
+
+            <figure class="galerija_slika">
+                <a href="#img4">
+                    <img src="image/Ride.png" alt="Poster filma 2" loading="lazy">
+                </a>
+                <figcaption>Ride a Wild Pony</figcaption>
+            </figure>
+
+            </section>
+
+
+
+
+        <div id="img1" class="lightbox">
+            <a href="#" class="close" aria-label="Zatvori">&times;</a>
+            <div class="lightbox-content">
+                <img src="image/poster.png" alt="Prikaz slike 1">
+            </div>
+        </div>
+
+        <div id="img2" class="lightbox">
+            <a href="#" class="close" aria-label="Zatvori">&times;</a>
+            <div class="lightbox-content">
+                <img src="image/BugsBunnyMovie.png" alt="Prikaz slike 2">
+            </div>
+        </div>
+
+        <div id="img3" class="lightbox">
+            <a href="#" class="close" aria-label="Zatvori">&times;</a>
+            <div class="lightbox-content">
+                <img src="image/18Anni.png" alt="Prikaz slike 2">
+            </div>
+        </div>
+
+        <div id="img4" class="lightbox">
+            <a href="#" class="close" aria-label="Zatvori">&times;</a>
+            <div class="lightbox-content">
+                <img src="image/Ride.png" alt="Prikaz slike 2">
+            </div>
+        </div>
+
+        </main>
+
+    <footer>
+        <p>&copy; 2025. Robert Slamnjaković | LV1 Galerija</p>
+    </footer>
+
+</body>
+</html>
